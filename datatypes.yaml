@@ -1,0 +1,31 @@
+#String variables
+myself: girija gurung
+hubby: "coding"
+
+bio: | # stored as the seperate line
+    this is girija gurung
+    work as software engineer
+
+#write as single line in multiple lines
+
+message: >
+ hello 
+ good mormning 
+ dude
+#same as  hello good mormning dude
+
+#automatically detect its data types acc to the assigned value
+number: 324332
+marks: 98.95
+booleanValue : No #n, N,false,False,FALSE
+#same as true -> yes ,y, Y
+
+#specify the types by using !!
+zero: !!int 0
+positiveNum: !!int 55
+negativeNum: !!int -55
+binaryNum: !!int 010101
+octalNum: !!int 023457
+hexa: !!int 0x45
+commaValue: !
+

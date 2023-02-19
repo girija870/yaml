@@ -1,0 +1,17 @@
+"google" : "best to do jobs"
+1: "start from sde 1"
+--- #seprate as different document
+#lists
+- google
+- facebook
+- apple
+- amazon
+---
+cities:
+ - kathmandu
+ - pokhara
+ - dhading
+ - lalitpur
+--- 
+ cities: [bhaktapur,chitawan,dharan]
+ ... #end the document
