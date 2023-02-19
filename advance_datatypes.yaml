@@ -1,0 +1,39 @@
+company: !!seq
+  - employees
+  - salary
+  - location
+  - HR
+
+  countries: [nepal,india,usa]
+
+  #sparse sequence {some time key will be empty}
+  - hello
+  -
+  - whats up!
+  - Null
+  - sup
+
+  #nested sequence
+  - #represent the list []
+ - kathmandu
+ - pokhara
+ - dhading
+ - lalitpur
+-
+  - footbal
+  - vollyball
+  - cricket
+
+#maps
+!!map
+
+#nested maps
+country: nepal
+capital: kathmandu
+     area: 49.45 km²
+     population: 1.442 million 
+
+#OR
+country: nepal
+capital: { kathmandu ,rea: 49.45 km², population: 1.442 million } 
+
