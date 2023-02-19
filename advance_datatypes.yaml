@@ -1,3 +1,80 @@
+#sample demo
+"google" : "best to do jobs"
+1: "start from sde 1"
+--- #seprate as different document
+#lists
+- google
+- facebook
+- apple
+- amazon
+---
+cities:
+ - kathmandu
+ - pokhara
+ - dhading
+ - lalitpur
+--- 
+ cities: [bhaktapur,chitawan,dharan]
+ ... #end the document
+
+---
+#basic datatypes
+#String variables
+myself: girija gurung
+hubby: "coding"
+
+bio: | # stored as the seperate line
+    this is girija gurung
+    work as software engineer
+
+#write as single line in multiple lines
+
+message: >
+ hello 
+ good mormning 
+ dude
+#same as  hello good mormning dude
+
+#automatically detect its data types acc to the assigned value
+number: 324332
+marks: 98.95
+booleanValue : No #n, N,false,False,FALSE
+#same as true -> yes ,y, Y
+
+# dates and time
+canonical:        2001-12-15T02:59:43.1Z
+valid iso8601:    2001-12-14t21:59:43.10-05:00
+space separated:  2001-12-14 21:59:43.10 -5
+no time zone (Z): 2001-12-15 2:59:43.10
+date (00:00:00Z): 2002-12-14
+date: !!timestamp 2002-12-14
+
+
+#specify the types by using !!
+zero: !!int 0
+positiveNum: !!int 55
+negativeNum: !!int -55
+binaryNum: !!int 010101
+octalNum: !!int 023457
+hexa: !!int 0x45
+commaValue: !!int +678_89 # 678.89
+ecponentail numbers: 5656.868E88
+
+#boolean
+booleanValue: !!bool No
+
+#floating point numbers
+marks: !!float 88.90
+infinite: !!float .inf
+not a num : .nan
+
+#null 
+location: !!null Null # null Null ~
+~: this is null
+
+
+---
+#some advance datatypes
 company: !!seq
   - employees
   - salary
@@ -36,4 +113,73 @@ capital: kathmandu
 #OR
 country: nepal
 capital: { kathmandu ,rea: 49.45 km², population: 1.442 million } 
+
+#pairs : duplicate key also supports {array of hashtables}
+
+pair_ex : !!pairs
+   - jobs: software developer
+   - jobs: CTO
+#OR
+pair_ex : !!pairs [jobs: software developer, jobs: CTO]
+
+#set {for unique value}
+
+name: !!set
+ ? girija 
+ ? aayush
+ ? aashish
+
+ # this will be on json {
+ # "name": {
+  #  "girija": null,
+   # "aayush": null,
+    #"aashish": null
+ # }
+#}
+
+ #dictionary !!omap
+college: !!omap
+     - apex college:
+          location: mid baneshwor
+          area: 5454.5
+          number of student: 5000
+     - lincoln college:
+          location: rannibari,samakhusi
+          area: 656.5
+          number of student: 2000
+
+#json -> {
+ # "college": [
+  #  {
+   #   "apex college": {
+    #    "location": "mid baneshwor",
+      #  "area": 5454.5,
+     #   "number of student": 5000
+      #}
+    #},
+    #{
+     # "lincoln college": {
+      #  "location": "rannibari,samakhusi",
+      # "area": 656.5,
+      # "number of student": 2000
+      #}
+    #}
+  #]
+#}
+
+#reusing properties using anchors
+
+sounds: &animalsounds  #this is the representer of anchors
+  sound : Bark
+  color : black
+
+  animal: 
+  name : dog
+  <<: *animalsounds #this will get all properties 
+  
+
+    animal1: 
+  name : cat
+  <<: *animalsounds
+  sound: Meow #this is overriden properties
 
