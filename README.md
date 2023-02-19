@@ -1,2 +1,2 @@
 # yaml
-This is all about  basic yaml rules.
+ YAML is a human-readable data-serialization language. It is commonly used for configuration files and in applications where data is being stored or transmitted.
